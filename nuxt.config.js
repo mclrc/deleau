@@ -56,7 +56,8 @@ export default {
 
       config.node = {
 
-        fs: "empty"
+        fs: "empty",
+        net: "empty"
       };
     }
   },

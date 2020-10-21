@@ -4,7 +4,6 @@
 			<span id="copyright">©2019 Roland Deleau, alle Rechte vorbehalten</span>
 			<span><a href="https://www.galerie-schmalfuss.de/">Galerie Schmalfuss</a></span>
 			<span><a href="http://www.thorens-gallery.com/">Thorens Gallery</a></span>
-			<span><a href="https://www.homelidays.com/hebergement/p6366633">Ferien im provencalischen Maler-Studio vis à vis Mt Ventoux</a></span>
 			<span>Website by <a href="https://pixldev.netlify.app">Moritz Clerc</a></span>
 		</div>
 		<div id="impressum">
@@ -29,6 +28,7 @@ footer {
 	font-size: .8rem;
 
 	width: 100%;
+	padding: 2rem;
 	height: $footer-height;
 
 	display: flex;
@@ -46,8 +46,11 @@ a {
 
 #links, #impressum {
 	display: flex;
-	span:not(:last-child) {
-		margin-right: 2rem;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	span {
+		padding: .2rem 1rem;
 	}
 }
 </style>

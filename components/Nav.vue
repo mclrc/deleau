@@ -2,6 +2,7 @@
   <div id="navbar" :class="{ scrolled: scrolled }">
     <nav class="constrain-width">
       <div id="header">
+        <img src="/favicon.ico">
         <span>Roland</span>
         <h1>Deleau</h1>
         <!-- <img src="/src/assets/title.png" alt=""> -->
@@ -23,9 +24,10 @@ export default {
     const scrolled = ref(false);
 
     function updateIsScrolled() {
-      scrolled.value = document.firstElementChild.scrollTop > 3;
+      console.log(document.firstElementChild.scrollTop)
+      scrolled.value = document.firstElementChild.scrollTop > 5;
   	}
-
+    
     const routes = ref([
       {
         name: "Start",
@@ -36,15 +38,14 @@ export default {
         path: "/biographie",
       },
       {
-        name: "Kontakt",
-        path: "/kontakt",
-      },
+        name: "Werke",
+        path: '/werke'
+      }
   	]);
 
     onMounted(() => {
   		updateIsScrolled();
       window.addEventListener("scroll", updateIsScrolled);
-  		scrolled.value = true;
     });
     onBeforeUnmount(() => {
       window.removeEventListener("scroll", updateIsScrolled);
@@ -84,14 +85,31 @@ nav {
 
 #header {
   font-family: "Times New Roman", serif;
+  display: grid;
+  grid-template-areas: 'logo firstname' 'logo lastname';
+  justify-items: left;
+  align-items: center;
+  width: auto;
   h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: lighter;
     line-height: 0.9;
+    grid-area: lastname;
   }
   span {
     font-size: 0.9em;
+    text-align: left;
+    grid-area: firstname;
+  }
+  img {
+    display: block;
+    height: 2rem;
+    padding: .2rem 0;
+    margin-right: .3rem;
+    background-color: white;
+    border-radius: 9999px;
+    grid-area: logo;
   }
 }
 

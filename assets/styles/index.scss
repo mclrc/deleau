@@ -1,0 +1,51 @@
+@import "./theme.scss";
+
+:root {
+	font-family: "Noto Sans SC", sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	min-height: calc(100vh + 1px);
+	position: relative;
+	padding-bottom: $footer-height + 2rem;
+}
+
+.constrain-width {
+	max-width: $max-content-width;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+.content {
+	@extend .constrain-width;
+	h1,
+	h2,
+	h3,
+	h4 {
+		margin: 2rem 0 0 0;
+	}
+	p,
+	span {
+		font-weight: 300;
+		line-height: 2;
+	}
+}
+
+.note {
+	padding: 1rem;
+	width: 40%;
+	float: right;
+	background-color: $footer-background-color;
+	color: $footer-text-color;
+	margin-left: 2rem;
+	h3,
+	p {
+		margin: 0;
+	}
+}

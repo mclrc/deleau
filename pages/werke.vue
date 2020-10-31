@@ -20,16 +20,24 @@
       class="overlay"
       @click="enlargedPainting = null"
     >
-      <div class="painting" :style="{
-				backgroundImage: `url(${enlargedPainting && enlargedPainting.image})`
-			}"></div>
-			<span>Zum verlassen erneut klicken</span>
+      <div
+        class="painting"
+        :style="{
+          backgroundImage: `url(${enlargedPainting && enlargedPainting.image})`,
+        }"
+      ></div>
+      <span>Zum verlassen erneut klicken</span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  head() {
+    return {
+      title: "Werke",
+    };
+  },
   async asyncData({ $content }) {
     return {
       paintings: await $content("bilder").fetch(),
@@ -57,26 +65,26 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-	width: calc(100vw - (100vw - 100%));
+  width: calc(100vw - (100vw - 100%));
   height: 100vh;
   z-index: 10;
-	background-color: rgba(0, 0, 0, 0.9);
-	
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	.painting {
-		width: 90%;
-		height: 90%;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-	}
-	span {
-		color: #999;
-		line-height: 3;
-		font-weight: lighter;
-	}
+  background-color: rgba(0, 0, 0, 0.9);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .painting {
+    width: 90%;
+    height: 90%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  span {
+    color: #999;
+    line-height: 3;
+    font-weight: lighter;
+  }
 }
 </style>

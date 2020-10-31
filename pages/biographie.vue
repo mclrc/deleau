@@ -280,6 +280,13 @@
 </template>
 
 <script>
+export default {
+  head() {
+    return {
+      title: "Biographie",
+    };
+  },
+};
 </script>
 
 <style scoped lang="scss">

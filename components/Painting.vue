@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper" :style="{'flex-direction': expand ? 'row' : 'column'}">
-    <img :src="data.image" @click="emit('click')" />
+    <img :src="data.image" @click="emit('click')" title="Zum vergroessern klicken" />
     <div class="data">
 			<label>Name</label>
 			<span>{{data.title}}</span>
@@ -40,6 +40,7 @@ export default {
 		display: block;
 		width: 60%;
 		height: auto;
+		cursor: pointer;
 	}
   .data {
 		padding: 0 0 0 10%;

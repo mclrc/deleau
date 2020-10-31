@@ -1,12 +1,24 @@
 backend:
   name: git-gateway
   branch: master
-
+#  name: test-repo
 media_folder: static/media
 public_folder: /media
 locale: 'de'
 
 collections:
+  - name: 'genres'
+    label: 'Genres'
+    label_singular: 'Genre'
+    format: 'json'
+    folder: 'content/genres'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Beschreibung', name: 'description', widget: 'string' }
   - name: 'bilder'
     label: 'Bilder'
     label_singular: 'Bild'
@@ -23,3 +35,4 @@ collections:
       - { label: 'Technik', name: 'technique', widget: 'string' }
       - { label: 'Maße', name: 'dimensions', widget: 'string', pattern: ['\d+ x \d+', 'Muss dem Format "<Breite> x <Höhe>" folgen'] }
       - { label: 'Bild', name: 'image', widget: 'image' }
+      - { label: 'Genre', name: 'genre', widget: 'relation', collection: 'genres', search_fields: ['name'], value_field: 'name', multiple: true, required: false }

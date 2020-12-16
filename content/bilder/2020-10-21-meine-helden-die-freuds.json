@@ -3,5 +3,8 @@
   "title": "Meine Helden - Die Freuds",
   "technique": "Acryl auf Leinwand",
   "dimensions": "150 x 150",
-  "image": "/media/meine-helden-die-freuds-2014-acryl-a.-leinw.-150x150cm.jpg"
+  "image": "/media/meine-helden-die-freuds-2014-acryl-a.-leinw.-150x150cm.jpg",
+  "genre": [
+    "Meine Helden"
+  ]
 }
